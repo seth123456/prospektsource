@@ -1,0 +1,29 @@
+#################
+## Eclipse
+#################
+
+#Image Files
+*.png
+*.jpg
+
+#Executables
+*.exe
+
+#Data Files
+*.dat
+*.bin
+
+#Config Files
+*.ini
+
+#Dynamic Link Libraries
+*.dll
+
+#Debug Files
+*.txt
+
+#Music and Sound Files
+*.mid
+*.mp3
+*.wav
+*.ogg
