@@ -85,7 +85,6 @@ Sub SpawnItem(ByVal itemnum As Long, ByVal ItemVal As Long, ByVal MapNum As Long
 End Sub
 
 Sub SpawnItemSlot(ByVal MapItemSlot As Long, ByVal itemnum As Long, ByVal ItemVal As Long, ByVal MapNum As Long, ByVal x As Long, ByVal y As Long, Optional ByVal playerName As String = vbNullString, Optional ByVal canDespawn As Boolean = True, Optional ByVal isSB As Boolean = False)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
 
@@ -492,7 +491,6 @@ Function CanNpcMove(ByVal MapNum As Long, ByVal MapNpcNum As Long, ByVal Dir As 
 End Function
 
 Sub NpcMove(ByVal MapNum As Long, ByVal MapNpcNum As Long, ByVal Dir As Long, ByVal movement As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
 
     ' Check for subscript out of range
@@ -505,54 +503,26 @@ Sub NpcMove(ByVal MapNum As Long, ByVal MapNpcNum As Long, ByVal Dir As Long, By
     Select Case Dir
         Case DIR_UP
             MapNpc(MapNum).Npc(MapNpcNum).y = MapNpc(MapNum).Npc(MapNpcNum).y - 1
-            Set Buffer = New clsBuffer
-            Buffer.WriteLong SNpcMove
-            Buffer.WriteLong MapNpcNum
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).x
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).y
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).Dir
-            Buffer.WriteLong movement
-            SendDataToMap MapNum, Buffer.ToArray()
-            Set Buffer = Nothing
         Case DIR_DOWN
             MapNpc(MapNum).Npc(MapNpcNum).y = MapNpc(MapNum).Npc(MapNpcNum).y + 1
-            Set Buffer = New clsBuffer
-            Buffer.WriteLong SNpcMove
-            Buffer.WriteLong MapNpcNum
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).x
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).y
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).Dir
-            Buffer.WriteLong movement
-            SendDataToMap MapNum, Buffer.ToArray()
-            Set Buffer = Nothing
         Case DIR_LEFT
             MapNpc(MapNum).Npc(MapNpcNum).x = MapNpc(MapNum).Npc(MapNpcNum).x - 1
-            Set Buffer = New clsBuffer
-            Buffer.WriteLong SNpcMove
-            Buffer.WriteLong MapNpcNum
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).x
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).y
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).Dir
-            Buffer.WriteLong movement
-            SendDataToMap MapNum, Buffer.ToArray()
-            Set Buffer = Nothing
         Case DIR_RIGHT
             MapNpc(MapNum).Npc(MapNpcNum).x = MapNpc(MapNum).Npc(MapNpcNum).x + 1
-            Set Buffer = New clsBuffer
-            Buffer.WriteLong SNpcMove
-            Buffer.WriteLong MapNpcNum
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).x
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).y
-            Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).Dir
-            Buffer.WriteLong movement
-            SendDataToMap MapNum, Buffer.ToArray()
-            Set Buffer = Nothing
     End Select
-
+    
+    Set Buffer = New clsBuffer
+    Buffer.WriteLong SNpcMove
+    Buffer.WriteLong MapNpcNum
+    Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).x
+    Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).y
+    Buffer.WriteLong MapNpc(MapNum).Npc(MapNpcNum).Dir
+    Buffer.WriteLong movement
+    SendDataToMap MapNum, Buffer.ToArray()
+    Set Buffer = Nothing
 End Sub
 
 Sub NpcDir(ByVal MapNum As Long, ByVal MapNpcNum As Long, ByVal Dir As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
 
     ' Check for subscript out of range

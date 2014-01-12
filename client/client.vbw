@@ -1,7 +1,7 @@
 frmMain = 50, 51, 1086, 663, , 25, 25, 1061, 637, C
 modText = 175, 175, 1211, 787, 
 modTypes = 100, 100, 622, 551, 
-modGameLogic = 150, 150, 1186, 762, 
+modGameLogic = 150, 150, 1186, 762, Z
 modClientTCP = 100, 100, 817, 598, 
 modDatabase = 75, 75, 603, 526, 
 modConstants = 125, 125, 842, 623, 

@@ -58,7 +58,7 @@ Sub ServerLoop()
         ' Check for disconnections every half second
         If Tick > tmr500 Then
             For i = 1 To MAX_PLAYERS
-                If frmServer.Socket(i).State > sckConnected Then
+                If frmServer.Socket(i).state > sckConnected Then
                     Call CloseSocket(i)
                 End If
             Next

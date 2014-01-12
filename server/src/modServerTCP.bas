@@ -493,7 +493,6 @@ Function PlayerData(ByVal index As Long) As Byte()
 End Function
 
 Sub SendJoinMap(ByVal index As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -516,7 +515,6 @@ Sub SendJoinMap(ByVal index As Long)
 End Sub
 
 Sub SendLeaveMap(ByVal index As Long, ByVal MapNum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     
@@ -528,7 +526,6 @@ Sub SendLeaveMap(ByVal index As Long, ByVal MapNum As Long)
 End Sub
 
 Sub SendPlayerData(ByVal index As Long)
-    Dim packet As String
     SendDataToMap GetPlayerMap(index), PlayerData(index)
 End Sub
 
@@ -545,7 +542,6 @@ Sub SendMap(ByVal index As Long, ByVal MapNum As Long)
 End Sub
 
 Sub SendMapItemsTo(ByVal index As Long, ByVal MapNum As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -571,7 +567,6 @@ Sub SendMapItemsTo(ByVal index As Long, ByVal MapNum As Long)
 End Sub
 
 Sub SendMapItemsToAll(ByVal MapNum As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -613,7 +608,6 @@ Sub SendMapNpcVitals(ByVal MapNum As Long, ByVal MapNpcNum As Long)
 End Sub
 
 Sub SendMapNpcsTo(ByVal index As Long, ByVal MapNum As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -634,7 +628,6 @@ Sub SendMapNpcsTo(ByVal index As Long, ByVal MapNum As Long)
 End Sub
 
 Sub SendMapNpcsToMap(ByVal MapNum As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -707,7 +700,6 @@ Sub SendResources(ByVal index As Long)
 End Sub
 
 Sub SendInventory(ByVal index As Long)
-    Dim packet As String
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -726,7 +718,6 @@ Sub SendInventory(ByVal index As Long)
 End Sub
 
 Sub SendInventoryUpdate(ByVal index As Long, ByVal invSlot As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     
@@ -741,7 +732,6 @@ Sub SendInventoryUpdate(ByVal index As Long, ByVal invSlot As Long)
 End Sub
 
 Sub SendWornEquipment(ByVal index As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     
@@ -788,7 +778,6 @@ Sub SendMapEquipmentTo(ByVal PlayerNum As Long, ByVal index As Long)
 End Sub
 
 Sub SendVital(ByVal index As Long, ByVal Vital As Vitals)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
 
@@ -825,7 +814,6 @@ End Sub
 
 Sub SendStats(ByVal index As Long)
 Dim i As Long
-Dim packet As String
 Dim Buffer As clsBuffer
 
     Set Buffer = New clsBuffer
@@ -849,7 +837,6 @@ Sub SendWelcome(ByVal index As Long)
 End Sub
 
 Sub SendClasses(ByVal index As Long)
-    Dim packet As String
     Dim i As Long, n As Long, q As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -893,7 +880,6 @@ Sub SendClasses(ByVal index As Long)
 End Sub
 
 Sub SendNewCharClasses(ByVal index As Long)
-    Dim packet As String
     Dim i As Long, n As Long, q As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -933,7 +919,6 @@ Sub SendNewCharClasses(ByVal index As Long)
 End Sub
 
 Sub SendLeftGame(ByVal index As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     Buffer.WriteLong SPlayerData
@@ -951,7 +936,6 @@ Sub SendLeftGame(ByVal index As Long)
 End Sub
 
 Sub SendPlayerXY(ByVal index As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     Buffer.WriteLong SPlayerXY
@@ -963,7 +947,6 @@ Sub SendPlayerXY(ByVal index As Long)
 End Sub
 
 Sub SendPlayerXYToMap(ByVal index As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     Buffer.WriteLong SPlayerXYMap
@@ -976,7 +959,6 @@ Sub SendPlayerXYToMap(ByVal index As Long)
 End Sub
 
 Sub SendUpdateItemToAll(ByVal itemnum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim ItemSize As Long
     Dim ItemData() As Byte
@@ -996,7 +978,6 @@ Sub SendUpdateItemToAll(ByVal itemnum As Long)
 End Sub
 
 Sub SendUpdateItemTo(ByVal index As Long, ByVal itemnum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim ItemSize As Long
     Dim ItemData() As Byte
@@ -1012,7 +993,6 @@ Sub SendUpdateItemTo(ByVal index As Long, ByVal itemnum As Long)
 End Sub
 
 Sub SendUpdateAnimationToAll(ByVal AnimationNum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim AnimationSize As Long
     Dim AnimationData() As Byte
@@ -1028,7 +1008,6 @@ Sub SendUpdateAnimationToAll(ByVal AnimationNum As Long)
 End Sub
 
 Sub SendUpdateAnimationTo(ByVal index As Long, ByVal AnimationNum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim AnimationSize As Long
     Dim AnimationData() As Byte
@@ -1044,7 +1023,6 @@ Sub SendUpdateAnimationTo(ByVal index As Long, ByVal AnimationNum As Long)
 End Sub
 
 Sub SendUpdateNpcToAll(ByVal NPCNum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim NPCSize As Long
     Dim NPCData() As Byte
@@ -1065,7 +1043,6 @@ Sub SendUpdateNpcToAll(ByVal NPCNum As Long)
 End Sub
 
 Sub SendUpdateNpcTo(ByVal index As Long, ByVal NPCNum As Long)
-    Dim packet As String
     Dim Buffer As clsBuffer
     Dim NPCSize As Long
     Dim NPCData() As Byte
@@ -1081,7 +1058,7 @@ Sub SendUpdateNpcTo(ByVal index As Long, ByVal NPCNum As Long)
 End Sub
 
 Sub SendUpdateResourceToAll(ByVal ResourceNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim ResourceSize As Long
     Dim ResourceData() As Byte
@@ -1101,7 +1078,7 @@ Sub SendUpdateResourceToAll(ByVal ResourceNum As Long)
 End Sub
 
 Sub SendUpdateResourceTo(ByVal index As Long, ByVal ResourceNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim ResourceSize As Long
     Dim ResourceData() As Byte
@@ -1134,7 +1111,7 @@ Sub SendShops(ByVal index As Long)
 End Sub
 
 Sub SendUpdateShopToAll(ByVal shopNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim ShopSize As Long
     Dim ShopData() As Byte
@@ -1154,7 +1131,7 @@ Sub SendUpdateShopToAll(ByVal shopNum As Long)
 End Sub
 
 Sub SendUpdateShopTo(ByVal index As Long, ByVal shopNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim ShopSize As Long
     Dim ShopData() As Byte
@@ -1187,7 +1164,7 @@ Sub SendSpells(ByVal index As Long)
 End Sub
 
 Sub SendUpdateSpellToAll(ByVal spellnum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
     Dim SpellSize As Long
@@ -1208,7 +1185,7 @@ Sub SendUpdateSpellToAll(ByVal spellnum As Long)
 End Sub
 
 Sub SendUpdateSpellTo(ByVal index As Long, ByVal spellnum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim SpellSize As Long
     Dim SpellData() As Byte
@@ -1228,7 +1205,7 @@ Sub SendUpdateSpellTo(ByVal index As Long, ByVal spellnum As Long)
 End Sub
 
 Sub SendPlayerSpells(ByVal index As Long)
-    Dim packet As String
+    
     Dim i As Long
     Dim Buffer As clsBuffer
     Set Buffer = New clsBuffer
@@ -1997,7 +1974,7 @@ Sub SendEffects(ByVal index As Long)
 End Sub
 
 Sub SendUpdateEffectToAll(ByVal EffectNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim EffectSize As Long
     Dim EffectData() As Byte
@@ -2013,7 +1990,7 @@ Sub SendUpdateEffectToAll(ByVal EffectNum As Long)
 End Sub
 
 Sub SendUpdateEffectTo(ByVal index As Long, ByVal EffectNum As Long)
-    Dim packet As String
+    
     Dim Buffer As clsBuffer
     Dim EffectSize As Long
     Dim EffectData() As Byte
