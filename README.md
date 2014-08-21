@@ -12,25 +12,18 @@ To make Prospekt Source work do this:
 * 64bit system - Run provided Runtimes.exe as administrator and install them to C:\Windows\SYSWOW64
 
 #### Credits
-**Particle class:** Spodi.
-
-**Texture rotation:** Robin and Emily.
-
-**Various bugfixes:** Ricardo, Valentine, Ryoku Hasu and Render.
-
-**FMOD implementation:** Robin.
-
-**DirectX8 Class:** Harold and Robin.
-
-**MD5 Hashing:** David Ireland.
-
-**A* Pathfinding:** Herbert Glarner.
-
-**Original Mirage work:** Consty, Dmitry, Jacob and Robin.
-
-**Programming:** Jacob, Robin, Rodriguez, Derg and Fabio.
-
-**Graphical design:** Robin and Rory.
+```
+Particle class: Spodi.
+Texture rotation: Robin and Emily.
+Various bugfixes: Ricardo, Valentine, Ryoku Hasu and Render.
+FMOD implementation: Robin.
+Original DirectX8 Class: Harold and Robin.
+MD5 Hashing implementation: David Ireland.
+A* Pathfinding implementation: Herbert Glarner.
+Original Mirage work: Consty, Dmitry, Jacob and Robin.
+Additional programming: Jacob, Robin, Rodriguez, Derg and Fabio.
+Graphical design: Robin and Rory.
+```
 
 #### License
 ```
